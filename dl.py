@@ -113,7 +113,7 @@ def log_in():
         elif len(str1) > 5:
             # print(str1)
             request = urllib.request.Request(
-                "https://raspiinvent.com/logbook/admin/includes/services/machine-user-log-in.php?rfidno=%s" % (str1)+"&machine_no=%s" % (machine_no))
+                "http://10.100.48.50/logbook/admin/includes/services/machine-user-log-in.php?rfidno=%s" % (str1)+"&machine_no=%s" % (machine_no))
             json_data = urllib.request.urlopen(request).read()
 
             result = json.loads(json_data)
@@ -143,7 +143,7 @@ def log_in():
 def log_out():
     try:
         request = urllib.request.Request(
-            "https://raspiinvent.com/logbook/admin/includes/services/machine-user-log-out.php?rfidno=%s" % (str1)+"&machine_no=%s" % (machine_no))
+            "http://10.100.48.50/logbook/admin/includes/services/machine-user-log-out.php?rfidno=%s" % (str1)+"&machine_no=%s" % (machine_no))
         urllib.request.urlopen(request).read()
     except:
             print("Network Problem")
